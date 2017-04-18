@@ -1,0 +1,1664 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/sidorares/node-x11">x11 (v2.2.0)</a>
+</h1>
+<h4>A pure node.js JavaScript client implementing X Window (X11) protocol and extensions.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.x11">module x11</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.createClient">
+            function <span class="apidocSignatureSpan">x11.</span>createClient
+            <span class="apidocSignatureSpan">(options, initCb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.createServer">
+            function <span class="apidocSignatureSpan">x11.</span>createServer
+            <span class="apidocSignatureSpan">(options, onconnect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream">
+            function <span class="apidocSignatureSpan">x11.</span>unpackstream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">x11.</span>CopyFromParent</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">x11.</span>InputFocus</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">x11.</span>InputOnly</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">x11.</span>InputOutput</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">x11.</span>PointerWindow</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>bitGravity</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>eventMask</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>handshake</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>hexy</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>keySyms</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>unpackbuffer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>unpackstream.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>winGravity</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>xcore</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>xserver</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">x11.</span>xutil</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.x11.handshake">module x11.handshake</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.handshake.readServerHello">
+            function <span class="apidocSignatureSpan">x11.handshake.</span>readServerHello
+            <span class="apidocSignatureSpan">(bl, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.handshake.writeClientHello">
+            function <span class="apidocSignatureSpan">x11.handshake.</span>writeClientHello
+            <span class="apidocSignatureSpan">(stream, displayNum, authHost, authFamily)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.x11.hexy">module x11.hexy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.hexy.hexy">
+            function <span class="apidocSignatureSpan">x11.</span>hexy
+            <span class="apidocSignatureSpan">(buffer, config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.x11.unpackbuffer">module x11.unpackbuffer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackbuffer.addUnpack">
+            function <span class="apidocSignatureSpan">x11.unpackbuffer.</span>addUnpack
+            <span class="apidocSignatureSpan">(Buffer)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.x11.unpackstream">module x11.unpackstream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.unpackstream">
+            function <span class="apidocSignatureSpan">x11.</span>unpackstream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.super_">
+            function <span class="apidocSignatureSpan">x11.unpackstream.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.x11.unpackstream.prototype">module x11.unpackstream.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.prototype.flush">
+            function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>flush
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.prototype.get">
+            function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>get
+            <span class="apidocSignatureSpan">(length, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.prototype.getbyte">
+            function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>getbyte
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.prototype.pack">
+            function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>pack
+            <span class="apidocSignatureSpan">(format, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.prototype.pipe">
+            function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>pipe
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.prototype.resume">
+            function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>resume
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.prototype.unpack">
+            function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>unpack
+            <span class="apidocSignatureSpan">(format, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.prototype.unpackTo">
+            function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>unpackTo
+            <span class="apidocSignatureSpan">(destination, names_formats, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.unpackstream.prototype.write">
+            function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>write
+            <span class="apidocSignatureSpan">(buf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.x11.xcore">module x11.xcore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.xcore.createClient">
+            function <span class="apidocSignatureSpan">x11.xcore.</span>createClient
+            <span class="apidocSignatureSpan">(options, initCb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.x11.xserver">module x11.xserver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.xserver.createServer">
+            function <span class="apidocSignatureSpan">x11.xserver.</span>createServer
+            <span class="apidocSignatureSpan">(options, onconnect)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.x11.xutil">module x11.xutil</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.xutil.padded_length">
+            function <span class="apidocSignatureSpan">x11.xutil.</span>padded_length
+            <span class="apidocSignatureSpan">(len)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.x11.xutil.padded_string">
+            function <span class="apidocSignatureSpan">x11.xutil.</span>padded_string
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.x11" id="apidoc.module.x11">module x11</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.x11.createClient" id="apidoc.element.x11.createClient">
+        function <span class="apidocSignatureSpan">x11.</span>createClient
+        <span class="apidocSignatureSpan">(options, initCb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createClient = function (options, initCb)
+{
+    if (typeof options === 'function') {
+        initCb = options;
+        options = {};
+    }
+
+    if (!options) options = {};
+
+    var display = options.display;
+    if (!display)
+        display = (process.env.DISPLAY) ? process.env.DISPLAY : ':0';
+
+    var displayMatch = display.match(/^(?:[^:]*?\/)?(.*):(\d+)(?:.(\d+))?$/);
+    if (!displayMatch)
+       throw new Error("Cannot parse display");
+
+    var host = displayMatch[1];
+
+    var displayNum = displayMatch[2];
+    if (!displayNum)
+        displayNum = 0;
+    var screenNum = displayMatch[3];
+    if (!screenNum)
+        screenNum = 0;
+
+    // open stream
+    var stream;
+    var connected = false;
+    var cbCalled = false;
+    var socketPath;
+
+    // try local socket on non-windows platforms
+    if ( ['cygwin', 'win32', 'win64'].indexOf(process.platform) &lt; 0 )
+    {
+        if (process.platform == 'darwin' || process.platform == 'mac')
+        {
+            // socket path on OSX is /tmp/launch-(some id)/org.x:0
+            if (display[0] == '/')
+            {
+                socketPath = display;
+            }
+        } else if(!host)
+            socketPath = '/tmp/.X11-unix/X' + displayNum;
+    }
+    var client = new XClient(displayNum, screenNum, options);
+
+    var connectStream = function() {
+        if (socketPath) {
+            stream = net.createConnection(socketPath);
+        } else {
+            stream = net.createConnection(6000 + parseInt(displayNum), host);
+        }
+        stream.on('connect', function() {
+            connected = true;
+            client.init(stream);
+        });
+        stream.on('error', function(err) {
+            if (!connected &amp;&amp; socketPath &amp;&amp; err.code === 'ENOENT') {
+                // Retry connection with TCP on localhost
+                socketPath = null;
+                host = 'localhost';
+                connectStream();
+            } else if (initCb &amp;&amp; !cbCalled) {
+                cbCalled = true;
+                initCb(err);
+            } else {
+                client.emit('error', err);
+            }
+        });
+    };
+    connectStream();
+    if (initCb)
+    {
+        client.on('connect', function(display) {
+            // opt-in BigReq
+            if (!options.disableBigRequests) {
+                client.require('big-requests', function(err, BigReq) {
+                    if (err)
+                        return initCb(err)
+                    BigReq.Enable(function(err, maxLen) {
+                        display.max_request_length = maxLen;
+	                cbCalled = true;
+                        initCb(undefined, display);
+                    });
+                });
+            } else {
+	        cbCalled = true;
+                initCb(undefined, display);
+            }
+        });
+    }
+    return client;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+var x11 = require('x11');
+
+var Exposure = x11.eventMask.Exposure;
+var PointerMotion = x11.eventMask.PointerMotion;
+
+x11.<span class="apidocCodeKeywordSpan">createClient</span>(function(err, display) {
+    if (!err) {
+        var X = display.client;
+        var root = display.screen[0].root;
+        var wid = X.AllocID();
+        X.CreateWindow(
+            wid, root,        // new window id, parent
+            0, 0, 100, 100,   // x, y, w, h
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.createServer" id="apidoc.element.x11.createServer">
+        function <span class="apidocSignatureSpan">x11.</span>createServer
+        <span class="apidocSignatureSpan">(options, onconnect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createServer = function (options, onconnect) {
+    if (typeof(options) === 'function') {
+        onconnect = options;
+        options = {};
+    }
+    var s = net.createServer();
+    var serv = new XServer(s, options);
+    serv.on('connect', onconnect);
+    return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+module.exports.createServer = function(options, onconnect) {
+    if (typeof(options) === 'function') {
+        onconnect = options;
+        options = {};
+    }
+    var s = net.<span class="apidocCodeKeywordSpan">createServer</span>();
+    var serv = new XServer(s, options);
+    serv.on('connect', onconnect);
+    return s;
+}
+
+//module.exports.createServer(6002) ;
+//function(client) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream" id="apidoc.element.x11.unpackstream">
+        function <span class="apidocSignatureSpan">x11.</span>unpackstream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UnpackStream()
+{
+    EventEmitter.call(this);
+
+    this.readlist = [];
+    this.length = 0;
+    this.offset = 0;
+    this.read_queue = [];
+    this.write_queue = [];
+    this.write_length = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.x11.handshake" id="apidoc.module.x11.handshake">module x11.handshake</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.x11.handshake.readServerHello" id="apidoc.element.x11.handshake.readServerHello">
+        function <span class="apidocSignatureSpan">x11.handshake.</span>readServerHello
+        <span class="apidocSignatureSpan">(bl, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readServerHello(bl, cb)
+{
+
+bl.unpack('C', function(res) {
+
+     if (res[0] == 0)
+     {
+         // conection time error
+         // unpack error
+         bl.unpack('Cxxxxxx', function (rlen) {
+             bl.get(rlen[0], function (reason) {
+                 var err = new Error;
+                 err.message = 'X server connection failed: ' + reason.toString();
+                 cb(err);
+             });
+         });
+         // TODO: do we need to close stream from our side?
+         // TODO: api to close source stream via attached unpackstream
+         return;
+     }
+
+     var display = {};
+     bl.unpackTo(
+         display,
+         [
+          'x',
+          'S major',
+          'S minor',
+          'S xlen',
+          'L release',
+          'L resource_base',
+          'L resource_mask',
+          'L motion_buffer_size',
+          'S vlen',
+          'S max_request_length',
+          'C screen_num',
+          'C format_num',
+          'C image_byte_order',
+          'C bitmap_bit_order',
+          'C bitmap_scanline_unit',
+          'C bitmap_scanline_pad',
+          'C min_keycode',
+          'C max_keycode',
+          'xxxx'
+         ],
+
+         function()
+         {
+             var pvlen = xutil.padded_length(display.vlen);
+
+             // setup data to generate resource id
+             // TODO: cleaunup code here
+             var mask = display.resource_mask;
+             display.rsrc_shift = 0;
+             while (!( (mask &gt;&gt; display.rsrc_shift) &amp; 1) )
+                 display.rsrc_shift++;
+             display.rsrc_id = 0;
+
+             bl.get(pvlen, function(vendor)
+             {
+                 display.vendor = vendor.toString().substr(0, display.vlen); // utf8 by default?
+
+                 display.format = {};
+                 for (var i=0; i &lt; display.format_num; ++i)
+                 {
+                     bl.unpack('CCCxxxxx', function(fmt) {
+                         var depth = fmt[0];
+                         display.format[depth] = {};
+                         display.format[depth].bits_per_pixel = fmt[1];
+                         display.format[depth].scanline_pad = fmt[2];
+                         if (Object.keys(display.format).length == display.format_num)
+                         {
+                             delete display.format_num;
+                             display.screen = [];
+                             readScreens(bl, display, cb);
+                         }
+                     });
+                 }
+             });
+         }
+     );
+});
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+);
+}
+
+XClient.prototype.startHandshake = function() {
+var client = this;
+
+handshake.writeClientHello(this.pack_stream, this.displayNum, this.authHost, this.authFamily);
+handshake.<span class="apidocCodeKeywordSpan">readServerHello</span>(this.pack_stream, function(err, display)
+{
+    if (err) {
+        client.emit('error', err);
+        return;
+    }
+    client.expectReplyHeader();
+    client.display = display;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.handshake.writeClientHello" id="apidoc.element.x11.handshake.writeClientHello">
+        function <span class="apidocSignatureSpan">x11.handshake.</span>writeClientHello
+        <span class="apidocSignatureSpan">(stream, displayNum, authHost, authFamily)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function writeClientHello(stream, displayNum, authHost, authFamily)
+{
+    getAuthString( displayNum, authHost, authFamily, function( err, cookie ) {
+        if (err) {
+            throw err;
+        }
+        var byte_order = getByteOrder();
+        var protocol_major = 11; // TODO: config? env?
+        var protocol_minor = 0;
+        stream.pack(
+            'CxSSSSxxpp',
+            [
+            byte_order,
+            protocol_major,
+            protocol_minor,
+            cookie.authName.length,
+            cookie.authData.length,
+            cookie.authName,
+            cookie.authData
+            ]
+        );
+        stream.flush();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+);
+}
+
+XClient.prototype.startHandshake = function() {
+var client = this;
+
+handshake.<span class="apidocCodeKeywordSpan">writeClientHello</span>(this.pack_stream, this.displayNum, this.authHost, this.authFamily
+);
+handshake.readServerHello(this.pack_stream, function(err, display)
+{
+    if (err) {
+        client.emit('error', err);
+        return;
+    }
+    client.expectReplyHeader();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.x11.hexy" id="apidoc.module.x11.hexy">module x11.hexy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.x11.hexy.hexy" id="apidoc.element.x11.hexy.hexy">
+        function <span class="apidocSignatureSpan">x11.</span>hexy
+        <span class="apidocSignatureSpan">(buffer, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hexy = function (buffer, config) {
+  config = config || {}
+  var h = new Hexy(buffer, config)
+  return h.toString()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// how the hex dumb will end up looking.
+//
+// It should create a pleasant looking hex dumb by default:
+//
+//    var hexy = require('hexy.js'),
+//           b = new Buffer("\000\001\003\005\037\012\011bcdefghijklmnopqrstuvwxyz0123456789")
+//
+//    console.log(hexy.<span class="apidocCodeKeywordSpan">hexy</span>(b))
+//
+// results in this dump:
+//
+//    0000000: 00 01 03 05 1f 0a 09 62   63 64 65 66 67 68 69 6a  .......b cdefghij
+//    0000010: 6b 6c 6d 6e 6f 70 71 72   73 74 75 76 77 78 79 7a  klmnopqr stuvwxyz
+//    0000020: 30 31 32 33 34 35 36 37   38 39                    01234567 89
+//
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.x11.unpackbuffer" id="apidoc.module.x11.unpackbuffer">module x11.unpackbuffer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackbuffer.addUnpack" id="apidoc.element.x11.unpackbuffer.addUnpack">
+        function <span class="apidocSignatureSpan">x11.unpackbuffer.</span>addUnpack
+        <span class="apidocSignatureSpan">(Buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addUnpack = function (Buffer)
+{
+    Buffer.prototype.unpack = function(format, offset)
+    {
+        if (!offset)
+            offset = 0;
+
+        var data = [];
+        var current_arg = 0;
+        while (current_arg &lt; format.length)
+        {
+            var arg = format[current_arg];
+            switch (arg) {
+            case 'C':
+                data.push(this.readUInt8(offset++));
+                break;
+            case 'c':
+                data.push(this.readInt8(offset++));
+                break;
+            case 'S':
+                data.push(this.readUInt16LE(offset));
+                offset += 2;
+                break;
+            case 's':
+                data.push(this.readInt16LE(offset));
+                offset += 2;
+                break;
+            case 'n':
+                data.push(this.readUInt16BE(offset));
+                offset += 2;
+                break;
+            case 'L':
+                data.push(this.readUInt32LE(offset));
+                offset += 4;
+                break;
+            case 'l':
+                data.push(this.readInt32LE(offset));
+                offset += 4;
+                break;
+            case 'x':
+                offset++;
+                break;
+            }
+            current_arg++;
+        }
+        return data;
+    }
+
+<span class="apidocCodeCommentSpan">    /*
+    Buffer.prototype.skip = function(n)
+    {
+        offset += n;
+    }
+    */
+</span>
+    Buffer.prototype.unpackString = function(n, offset)
+    {
+        var res = '';
+        var end = offset + n;
+        while(offset &lt; end)
+            res += String.fromCharCode(this[offset++]);
+        return res;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// TODO: differentiate between auth types (i.e., MIT-MAGIC-COOKIE-1 and XDM-AUTHORIZATION-1)
+// and choose the best based on the algorithm in libXau's XauGetBestAuthByAddr
+
+var fs = require('fs');
+var Buffer = require('buffer').Buffer;
+// add 'unpack' method for buffer
+require('./unpackbuffer').<span class="apidocCodeKeywordSpan">addUnpack</span>(Buffer);
+
+var typeToName = {
+  256: 'Local',
+65535: 'Wild',
+  254: 'Netname',
+  253: 'Krb5Principal',
+  252: 'LocalHost',
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.x11.unpackstream" id="apidoc.module.x11.unpackstream">module x11.unpackstream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.unpackstream" id="apidoc.element.x11.unpackstream.unpackstream">
+        function <span class="apidocSignatureSpan">x11.</span>unpackstream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UnpackStream()
+{
+    EventEmitter.call(this);
+
+    this.readlist = [];
+    this.length = 0;
+    this.offset = 0;
+    this.read_queue = [];
+    this.write_queue = [];
+    this.write_length = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.super_" id="apidoc.element.x11.unpackstream.super_">
+        function <span class="apidocSignatureSpan">x11.unpackstream.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.x11.unpackstream.prototype" id="apidoc.module.x11.unpackstream.prototype">module x11.unpackstream.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.prototype.flush" id="apidoc.element.x11.unpackstream.prototype.flush">
+        function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>flush
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flush = function (stream)
+{
+    // TODO: measure performance benefit of
+    // creating and writing one big concatenated buffer
+
+    // TODO: check write result
+    // pause/resume streaming
+    for (var i=0; i &lt; this.write_queue.length; ++i)
+    {
+         //stream.write(this.write_queue[i])
+         this.emit('data', this.write_queue[i]);
+    }
+    this.write_queue = [];
+    this.write_length = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            protocol_minor,
+            cookie.authName.length,
+            cookie.authData.length,
+            cookie.authName,
+            cookie.authData
+            ]
+        );
+        stream.<span class="apidocCodeKeywordSpan">flush</span>();
+    });
+}
+
+module.exports.readServerHello = readServerHello;
+module.exports.writeClientHello = writeClientHello;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.prototype.get" id="apidoc.element.x11.unpackstream.prototype.get">
+        function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>get
+        <span class="apidocSignatureSpan">(length, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (length, callback)
+{
+    this.read_queue.push(new ReadFixedRequest(length, callback));
+    this.resume();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+bl.unpack('C', function(res) {
+
+if (res[0] == 0)
+{
+    // conection time error
+    // unpack error
+    bl.unpack('Cxxxxxx', function (rlen) {
+        bl.<span class="apidocCodeKeywordSpan">get</span>(rlen[0], function (reason) {
+            var err = new Error;
+            err.message = 'X server connection failed: ' + reason.toString();
+            cb(err);
+        });
+    });
+    // TODO: do we need to close stream from our side?
+    // TODO: api to close source stream via attached unpackstream
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.prototype.getbyte" id="apidoc.element.x11.unpackstream.prototype.getbyte">
+        function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>getbyte
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getbyte = function ()
+{
+    var res = 0;
+    var b = this.readlist[0];
+    if (this.offset + 1 &lt; b.length)
+    {
+        res = b[this.offset];
+        this.offset++;
+        this.length--;
+
+    } else {
+
+        // last byte in current buffer, shift read list
+        res = b[this.offset];
+        this.readlist.shift();
+        this.length--;
+        this.offset = 0;
+    }
+    return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // TODO: this is a brute force version
+    // replace with Buffer.slice calls
+    var to_receive = this.length - this.received_bytes;
+    for(var i=0 ; i &lt; to_receive; ++i)
+    {
+        if (bufferlist.length == 0)
+            return false;
+        this.data[this.received_bytes++] = bufferlist.<span class="apidocCodeKeywordSpan">getbyte</span>();
+    }
+    this.callback(this.data);
+    return true;
+}
+
+ReadFormatRequest.prototype.execute = function(bufferlist, tag1, tag2)
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.prototype.pack" id="apidoc.element.x11.unpackstream.prototype.pack">
+        function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>pack
+        <span class="apidocSignatureSpan">(format, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pack = function (format, args)
+{
+    var packetlength = 0;
+
+    var arg = 0;
+    for (var i = 0; i &lt; format.length; ++i)
+    {
+        var f = format[i];
+        if (f == 'x')
+        {
+            packetlength++;
+        } else if (f == 'p') {
+            packetlength += xutil.padded_length(args[arg++].length);
+        } else if (f == 'a') {
+            packetlength += args[arg].length;
+            arg++;
+        } else {
+            // this is a fixed-length format, get length from argument_length table
+            packetlength += argument_length[f];
+            arg++;
+        }
+    }
+
+    var buf = new Buffer(packetlength);
+    var offset = 0;
+    var arg = 0;
+    for (var i = 0; i &lt; format.length; ++i)
+    {
+        switch(format[i])
+        {
+            case 'x':
+                buf[offset++] = 0;
+                break;
+            case 'C':
+                var n = args[arg++];
+                buf[offset++] = n;
+                break;
+            case 's':
+                var n = args[arg++];
+                buf.writeInt16LE(n, offset);
+                offset += 2;
+                break;
+
+            case 'S':
+                var n = args[arg++];
+                buf[offset++] = n &amp; 0xff;
+                buf[offset++] = (n &gt;&gt; 8) &amp; 0xff;
+                break;
+            case 'l':
+                var n = args[arg++];
+                buf.writeInt32LE(n, offset);
+                offset += 4;
+                break;
+
+            case 'L':
+                var n = args[arg++];
+                buf[offset++] = n &amp; 0xff;
+                buf[offset++] = (n &gt;&gt; 8) &amp; 0xff;
+                buf[offset++] = (n &gt;&gt; 16) &amp; 0xff;
+                buf[offset++] = (n &gt;&gt; 24) &amp; 0xff;
+                break;
+            case 'a':  // string or buffer
+                var str = args[arg++];
+                if (Buffer.isBuffer(str))
+                {
+                    str.copy(buf, offset);
+                    offset += str.length;
+                } else {
+                    // TODO: buffer.write could be faster
+                    for (var c = 0; c &lt; str.length; ++c)
+                        buf[offset++] = str.charCodeAt(c);
+                }
+                break;
+            case 'p':  // padded string
+                var str = args[arg++];
+                var len = xutil.padded_length(str.length);
+                // TODO: buffer.write could be faster
+                var c = 0;
+                for (; c &lt; str.length; ++c)
+                    buf[offset++] = str.charCodeAt(c);
+                for (; c &lt; len; ++c)
+                    buf[offset++] = 0;
+                break;
+        }
+    }
+    this.write_queue.push(buf);
+    this.write_length += buf.length;
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+the way requests are described here
+
+- outgoing request
+
+1) as function
+client.CreateWindow( params, params ) -&gt;
+    req = reqs.CreateWindow[0]( param, param );
+    pack_stream.<span class="apidocCodeKeywordSpan">pack</span>(req[0], req[1]);
+
+2) as array: [format, [opcode, request_length, additional known params]]
+
+client.MapWindow[0](id) -&gt;
+    req = reqs.MwpWindow;
+    req[1].push(id);
+    pack_stream.pack( req[0], req[1] );
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.prototype.pipe" id="apidoc.element.x11.unpackstream.prototype.pipe">
+        function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>pipe
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pipe = function (stream)
+{
+    // TODO: ondrain &amp; pause
+    this.on('data', function(data)
+    {
+        stream.write(data);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.authFamily = null;
+}
+
+var pack_stream = new PackStream();
+
+// data received from stream is dispached to
+// read requests set by calls to .unpack and .unpackTo
+//stream.<span class="apidocCodeKeywordSpan">pipe</span>(pack_stream);
+
+// pack_stream write requests are buffered and
+// flushed to stream as result of call to .flush
+// TODO: listen for drain event and flush automatically
+//pack_stream.pipe(stream);
+var client = this;
+pack_stream.on('data', function( data ) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.prototype.resume" id="apidoc.element.x11.unpackstream.prototype.resume">
+        function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>resume
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resume = function ()
+{
+    if (this.resumed)
+         return;
+    this.resumed = true;
+    // process all read requests until enough data in the buffer
+    while(this.read_queue[0].execute(this))
+    {
+        this.read_queue.shift();
+        if (this.read_queue.length == 0)
+            return;
+    }
+    this.resumed = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+util.inherits(UnpackStream, EventEmitter);
+
+UnpackStream.prototype.write = function(buf)
+{
+this.readlist.push(buf);
+this.length += buf.length;
+this.<span class="apidocCodeKeywordSpan">resume</span>();
+}
+
+UnpackStream.prototype.pipe = function(stream)
+{
+// TODO: ondrain &amp; pause
+this.on('data', function(data)
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.prototype.unpack" id="apidoc.element.x11.unpackstream.prototype.unpack">
+        function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>unpack
+        <span class="apidocSignatureSpan">(format, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unpack = function (format, callback)
+{
+    this.read_queue.push(new ReadFormatRequest(format, callback));
+    this.resume();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var cookie = {};
+cookie.type = buf.readUInt16BE(offset);
+if (!typeToName[cookie.type]) {
+    console.warn('Unknown address type');
+}
+offset += 2;
+cookieProperties.forEach(function(property) {
+  var length = buf.<span class="apidocCodeKeywordSpan">unpack</span>('n', offset)[0];
+  offset += 2;
+  if (cookie.type === 0 &amp;&amp; property == 'address') { // Internet
+    // 4 bytes of ip addess, convert to w.x.y.z string
+    cookie.address = [ buf[offset], buf[offset+1], buf[offset+2], buf[offset+3]]
+      .map(function(octet) { return octet.toString(10) }).join('.');
+  } else {
+    cookie[property] = buf.unpackString(length, offset);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.prototype.unpackTo" id="apidoc.element.x11.unpackstream.prototype.unpackTo">
+        function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>unpackTo
+        <span class="apidocSignatureSpan">(destination, names_formats, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unpackTo = function (destination, names_formats, callback)
+{
+    var names = [];
+    var format = '';
+
+    for (var i=0; i &lt; names_formats.length; ++i)
+    {
+        var off = 0;
+        while(off &lt; names_formats[i].length &amp;&amp; names_formats[i][off] == 'x')
+        {
+            format += 'x';
+            off++;
+        }
+
+        if (off &lt; names_formats[i].length)
+        {
+            format += names_formats[i][off];
+            var name = names_formats[i].substr(off+2);
+            names.push(name);
+        }
+    }
+
+    this.unpack(format, function(data) {
+        if (data.length != names.length)
+            throw 'Number of arguments mismatch, ' + names.length + ' fields and ' + data.length + ' arguments';
+        for (var fld = 0; fld &lt; data.length; ++fld)
+        {
+            destination[names[fld]] = data[fld];
+        }
+        callback(destination);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (n_visuals == 0)
+{
+    cb();
+    return;
+}
+
+var visual = {};
+bl.<span class="apidocCodeKeywordSpan">unpackTo</span>( visual,
+[
+    'L vid',
+    'C class',
+    'C bits_per_rgb',
+    'S map_ent',
+    'L red_mask',
+    'L green_mask',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.unpackstream.prototype.write" id="apidoc.element.x11.unpackstream.prototype.write">
+        function <span class="apidocSignatureSpan">x11.unpackstream.prototype.</span>write
+        <span class="apidocSignatureSpan">(buf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (buf)
+{
+    this.readlist.push(buf);
+    this.length += buf.length;
+    this.resume();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+UnpackStream.prototype.pipe = function(stream)
+{
+// TODO: ondrain &amp; pause
+this.on('data', function(data)
+{
+    stream.<span class="apidocCodeKeywordSpan">write</span>(data);
+});
+}
+
+UnpackStream.prototype.unpack = function(format, callback)
+{
+this.read_queue.push(new ReadFormatRequest(format, callback));
+this.resume();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.x11.xcore" id="apidoc.module.x11.xcore">module x11.xcore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.x11.xcore.createClient" id="apidoc.element.x11.xcore.createClient">
+        function <span class="apidocSignatureSpan">x11.xcore.</span>createClient
+        <span class="apidocSignatureSpan">(options, initCb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createClient = function (options, initCb)
+{
+    if (typeof options === 'function') {
+        initCb = options;
+        options = {};
+    }
+
+    if (!options) options = {};
+
+    var display = options.display;
+    if (!display)
+        display = (process.env.DISPLAY) ? process.env.DISPLAY : ':0';
+
+    var displayMatch = display.match(/^(?:[^:]*?\/)?(.*):(\d+)(?:.(\d+))?$/);
+    if (!displayMatch)
+       throw new Error("Cannot parse display");
+
+    var host = displayMatch[1];
+
+    var displayNum = displayMatch[2];
+    if (!displayNum)
+        displayNum = 0;
+    var screenNum = displayMatch[3];
+    if (!screenNum)
+        screenNum = 0;
+
+    // open stream
+    var stream;
+    var connected = false;
+    var cbCalled = false;
+    var socketPath;
+
+    // try local socket on non-windows platforms
+    if ( ['cygwin', 'win32', 'win64'].indexOf(process.platform) &lt; 0 )
+    {
+        if (process.platform == 'darwin' || process.platform == 'mac')
+        {
+            // socket path on OSX is /tmp/launch-(some id)/org.x:0
+            if (display[0] == '/')
+            {
+                socketPath = display;
+            }
+        } else if(!host)
+            socketPath = '/tmp/.X11-unix/X' + displayNum;
+    }
+    var client = new XClient(displayNum, screenNum, options);
+
+    var connectStream = function() {
+        if (socketPath) {
+            stream = net.createConnection(socketPath);
+        } else {
+            stream = net.createConnection(6000 + parseInt(displayNum), host);
+        }
+        stream.on('connect', function() {
+            connected = true;
+            client.init(stream);
+        });
+        stream.on('error', function(err) {
+            if (!connected &amp;&amp; socketPath &amp;&amp; err.code === 'ENOENT') {
+                // Retry connection with TCP on localhost
+                socketPath = null;
+                host = 'localhost';
+                connectStream();
+            } else if (initCb &amp;&amp; !cbCalled) {
+                cbCalled = true;
+                initCb(err);
+            } else {
+                client.emit('error', err);
+            }
+        });
+    };
+    connectStream();
+    if (initCb)
+    {
+        client.on('connect', function(display) {
+            // opt-in BigReq
+            if (!options.disableBigRequests) {
+                client.require('big-requests', function(err, BigReq) {
+                    if (err)
+                        return initCb(err)
+                    BigReq.Enable(function(err, maxLen) {
+                        display.max_request_length = maxLen;
+	                cbCalled = true;
+                        initCb(undefined, display);
+                    });
+                });
+            } else {
+	        cbCalled = true;
+                initCb(undefined, display);
+            }
+        });
+    }
+    return client;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+var x11 = require('x11');
+
+var Exposure = x11.eventMask.Exposure;
+var PointerMotion = x11.eventMask.PointerMotion;
+
+x11.<span class="apidocCodeKeywordSpan">createClient</span>(function(err, display) {
+    if (!err) {
+        var X = display.client;
+        var root = display.screen[0].root;
+        var wid = X.AllocID();
+        X.CreateWindow(
+            wid, root,        // new window id, parent
+            0, 0, 100, 100,   // x, y, w, h
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.x11.xserver" id="apidoc.module.x11.xserver">module x11.xserver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.x11.xserver.createServer" id="apidoc.element.x11.xserver.createServer">
+        function <span class="apidocSignatureSpan">x11.xserver.</span>createServer
+        <span class="apidocSignatureSpan">(options, onconnect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createServer = function (options, onconnect) {
+    if (typeof(options) === 'function') {
+        onconnect = options;
+        options = {};
+    }
+    var s = net.createServer();
+    var serv = new XServer(s, options);
+    serv.on('connect', onconnect);
+    return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+module.exports.createServer = function(options, onconnect) {
+    if (typeof(options) === 'function') {
+        onconnect = options;
+        options = {};
+    }
+    var s = net.<span class="apidocCodeKeywordSpan">createServer</span>();
+    var serv = new XServer(s, options);
+    serv.on('connect', onconnect);
+    return s;
+}
+
+//module.exports.createServer(6002) ;
+//function(client) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.x11.xutil" id="apidoc.module.x11.xutil">module x11.xutil</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.x11.xutil.padded_length" id="apidoc.element.x11.xutil.padded_length">
+        function <span class="apidocSignatureSpan">x11.xutil.</span>padded_length
+        <span class="apidocSignatureSpan">(len)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function padded_length(len)
+{
+   return ((len + 3) &gt;&gt; 2) &lt;&lt; 2;
+<span class="apidocCodeCommentSpan">   /*
+   var rem = len % 4;
+   var pl = len;
+   if (rem)
+       return len + 4 - rem;
+   return len;
+   */
+</span>}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return [ 'CxSLLssSSss', [41, 6, srcWin, dstWin, srcX, srcY, srcWidth, srcHeight, dstX, dstY] ];
+}
+   ],
+
+   ListFonts: [
+function(pattern, max)
+{
+    var req_len = 2+xutil.<span class="apidocCodeKeywordSpan">padded_length</span>(pattern.length)/4;
+    return [ 'CxSSSp', [49, req_len, max, pattern.length, pattern] ];
+},
+
+function(buf) {
+    console.log(buf);
+    // TODO: move to buffer.unpackStringList
+    var res = [];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.x11.xutil.padded_string" id="apidoc.element.x11.xutil.padded_string">
+        function <span class="apidocSignatureSpan">x11.xutil.</span>padded_string
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function padded_string(str)
+{
+   if (str.length == 0)
+       return '';
+
+   var pad = padded_length(str.length) - str.length;
+   var res = str;
+   for (var i=0; i &lt; pad; ++i)
+       res += String.fromCharCode(0);
+
+   return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ }
+   ],
+
+   // opcode 16
+   InternAtom: [
+function (returnOnlyIfExist, value)
+{
+    var padded = xutil.<span class="apidocCodeKeywordSpan">padded_string</span>(value);
+    return ['CCSSxxa', [16, returnOnlyIfExist ? 1 : 0, 2+padded.length/4, value.length, padded] ];
+},
+
+function(buf, seq_num) {
+    var res = buf.unpack('L')[0];
+    var pending_atom = this.pending_atoms[seq_num];
+    if (!this.atoms[pending_atom]) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
