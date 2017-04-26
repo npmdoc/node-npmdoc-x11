@@ -1,6 +1,6 @@
 # npmdoc-x11
 
-#### api documentation for  [x11 (v2.2.0)](https://github.com/sidorares/node-x11)  [![npm package](https://img.shields.io/npm/v/npmdoc-x11.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-x11) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-x11.svg)](https://travis-ci.org/npmdoc/node-npmdoc-x11)
+#### basic api documentation for  [x11 (v2.2.1)](https://github.com/sidorares/node-x11)  [![npm package](https://img.shields.io/npm/v/npmdoc-x11.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-x11) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-x11.svg)](https://travis-ci.org/npmdoc/node-npmdoc-x11)
 
 #### A pure node.js JavaScript client implementing X Window (X11) protocol and extensions.
 
@@ -40,13 +40,13 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "4d4d45091f0257fa2ea52217ab45ff4437ecc9a0",
-        "tarball": "https://registry.npmjs.org/x11/-/x11-2.2.0.tgz"
+        "shasum": "b1e4953d79992e990b7b4b5b29890613474719bd",
+        "tarball": "https://registry.npmjs.org/x11/-/x11-2.2.1.tgz"
     },
     "engines": {
         "node": "*"
     },
-    "gitHead": "77d1666c087a7dd3b17570fdfd84317a4162dec9",
+    "gitHead": "3ca322cecc5d837487152f92d713d06a72c96a21",
     "homepage": "https://github.com/sidorares/node-x11",
     "keywords": [
         "X Window",
@@ -87,7 +87,8 @@
         "prepublish": "npm prune",
         "test": "node test-runner.js"
     },
-    "version": "2.2.0"
+    "version": "2.2.1",
+    "bin": {}
 }
 ```
 
